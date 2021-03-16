@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/66fdaf3caf.js" crossorigin="anonymous"></script>
+
+    <title>Surf Cooker</title>
+</head>
+<body>
+    <div>
+        <header>
+            <section id="social-search-header">
+                <div id="social-header">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div id="search-header">
+                    <input class="search-bar"type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </section>
+            <div id="logo-nav-flex">
+                <div>
+                    <img id="logo" src="./img/logo.png">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="./html/media.html">Media</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                <img src="./img/Screen Shot 2021-03-16 at 2.53.35 PM.png" class="cover-photo">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="./img/wrap-coverup.jpg" class="cover-photo">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="./img/otw-railgrab-cropped.jpg" class="cover-photo">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./img/backside-grab-cropped.jpg" class="cover-photo">
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
