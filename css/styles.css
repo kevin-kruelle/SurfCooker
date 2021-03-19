@@ -2,19 +2,20 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: Raleway;
+    box-sizing: border-box;
 }
 
+/* social media/search false header */
 #social-search-header {
  width: 100%;
  height: 40px;
- border-bottom: 2px solid rgb(260, 50, 50);
+ /* border-bottom: 4px solid rgb(216, 216, 1); */
  background-color: rgb(238, 50, 16);
  display: flex;
  flex-direction: row;
  justify-content: space-between;
 }
 
-/* social media/search flase header */
 .fab:hover {       /* social media widgets */
     opacity: 60%;
 }
@@ -33,23 +34,31 @@ body {
     border-radius: 4px;
 }
 
-/* header content below */
+#logo-top {
+    display: none;
+}
+
+/* ============ header content below ============= */
 
 #logo-nav-flex {
-    height: 150px;
+    height: 110px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #logo {
     align-self: center;
-    margin: 15px 0 0 15px;
+    /* padding-left: 5rem; */
+    margin: 15px 0 0 15px; 
+    opacity: 95%;
+    height: 80px;
 }
 
 nav {
     align-self: center;
-    margin: 0 15px 0 0;
+    /* margin: 0 30px 0 0; */
     font-size: 20px;
 }
 
@@ -58,14 +67,22 @@ ul {
     text-decoration: none;
     display: flex;
     flex-direction: row;
+    /* padding-right: 5rem; */
 }
 
 li {
-    margin: 10px;
+    margin: 15px;
 }
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(182, 11, 11);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(182, 11, 11);
 }
 
 /* ================ slide show content below ================ */
@@ -74,63 +91,19 @@ a {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1500px;
-  max-height: 600px;
-  position: relative;
+  max-height: 500px;
+  
   margin: 0;
 }
 
 .cover-photo {
     width: 100%;
-    box-sizing: content-box;
+    max-height: 757px;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
 }
 
 /* Fading animation */
@@ -149,4 +122,147 @@ a {
 @keyframes fade {
   from {opacity: .7}
   to {opacity: 1}
+}
+
+/* #videoBG {
+    position: fixed;
+    top: 1rem;
+    z-index: -1;
+} */
+
+#beach-data, #weather-data {
+    padding: 1rem;
+}
+
+#current-weather-box, #wave-forecast-box {
+    margin-top: 2rem;
+}
+
+#current-beach {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#jsdata-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#latestvideo {
+    text-align: center;
+}
+
+/* ============= API section ============= */
+
+.flex-container3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#current-weather-box {
+    background-color: rgb(56, 187, 56);
+}
+
+#current-weather {
+    text-align: center;
+}
+
+#wave-forecast-box {
+    background-color: rgb(79, 79, 245);
+}
+
+.videos {
+    width: 550px;
+    align-self: space-evenly;
+    box-shadow: 0 0 10px 2px rgba(121, 121, 121, 0.3);
+    margin: 10px;
+}
+
+
+.blog-post-container {
+    border: 1px solid rgba(121, 121, 121, 0.3);
+    border-radius: 3px;
+    width: 270px;
+    height: 230px;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+#sticker-img {
+    width: 265px;
+    margin: 15px 0;
+}
+
+.blog-info-container {
+    padding: 5px 10px;
+    background-color:rgba(219, 219, 219, 0.5);
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(238, 50, 16);
+}
+
+#copyright {
+    color: white;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+@media screen and (max-width: 900px) {
+
+    #logo-top {
+        display: block;
+        height: 36px;
+    }
+
+    #logo-nav-flex {
+        display: none;
+    }
+
+    #search-header {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    #logo-nav-flex {
+        /* max-width: 1200px; */
+        justify-content: space-between;
+    }
+    .cover-photo {
+        max-width: 1000px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: transparent;
+        border-radius: 6px;
+    }
+
+    #slideshow-container {
+        background-color: yellow;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #logo-nav-flex {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: -1rem;
+    }
+
+    #logo {
+        height: 90px;
+        display: block;
+        margin: 0 auto 0 auto;
+        padding-left: 15px;
+    }
 }
