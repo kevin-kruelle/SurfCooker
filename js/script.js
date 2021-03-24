@@ -33,32 +33,58 @@ weather.onload = function () {
 weather.open('GET', 'https://api.weatherapi.com/v1/current.json?key=90a5993dbf8e4a759f205342211503&q=Dewey Beach&aqi=no', true)
 weather.send()
 
+// Below will display current Temp and widgets based on time of the day vs. night.
 function currentTempF(data) {
-  document.getElementById('current-temp-f').innerHTML = data + ' &#8457';
+  let current = new Date();
+  let day_night = current.getHours();
+  if (day_night <= 12) {
+    if (data != 'Sunny') {
+      document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon"></i>';
+      document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon"></i>';
+      } else if (data == 'Light rain' || data == 'Heavy rain' || data == 'Rain') {
+        document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon-rain"></i>';
+        document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon-rain"></i>';
+      } else if (data == 'Sunny') {
+        document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-moon"></i>';
+        document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-moon"></i>';
+      }
+  } else {
+    if (data != 'Sunny') {
+      document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fa fa-cloud" aria-hidden="true"></i>';
+      document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fa fa-cloud" aria-hidden="true"></i>';
+      } else if (data != 'Sunny' && data == 'rain') {
+        document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-cloud-showers-heavy"></i>';
+        document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-cloud-showers-heavy"></i>';
+      } else if (data == 'Sunny') {
+        document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-sun"></i>';
+        document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-sun"></i>';
+      }
+  }
 }
 
+
 function tempFeelsLike(data) {
-  document.getElementById('feels-like-f').innerHTML = 'Feels like: ' + data + ' &#8457';
+  document.getElementById('feels-like-f').innerHTML = '<span class="data-info">Feels like: </span>' + Math.round(data) + '&#8457';
 }
 
 function currentCondTxt(data) {
-  document.getElementById('current-condition-text').innerHTML = 'Conditions: ' + data;
+  document.getElementById('current-condition-text').innerHTML = '<span class="data-info">Conditions: </span>' + data;
 }
 
 function currentWindCond(data) {
-  document.getElementById('current-wind-mph').innerHTML = 'Wind: ' + data + ' mph';
+  document.getElementById('current-wind-mph').innerHTML = '<span class="data-info">Wind: </span>' + Math.round(data) + ' mph';
 }
 
 function visMiles(data) {
-  document.getElementById('visibility-miles').innerHTML = 'Visibility: ' + data + ' miles';
+  document.getElementById('visibility-miles').innerHTML = '<span class="data-info">Visibility: </span>' + data + ' miles';
 }
 
 function sunUv(data) {
-  document.getElementById('uv').innerHTML = 'UV: ' + data;
+  document.getElementById('uv').innerHTML = '<span class="data-info">UV: </span>' + data;
 }
 
 function humidity(data) {
-  document.getElementById('humidity').innerHTML = 'Humidity: ' + data + '%';
+  document.getElementById('humidity').innerHTML = '<span class="data-info">Humidity: </span>' + data + '%';
 }
 
 
@@ -77,8 +103,8 @@ console.log(jsonString)
 let xhr = new XMLHttpRequest();
 
 xhr.onload = function () {
-  let serverResponse = document.getElementById('what');
-  console.log(serverResponse.innerHTML = this.responseText);
+  // let serverResponse = document.getElementById('what');
+  // console.log(serverResponse.innerHTML = this.responseText);
 };
 
 xhr.open('POST', 'https://surfvideos.xyz/users/sign_in.json')
@@ -98,11 +124,10 @@ getData.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
     let jsonData = JSON.parse(this.responseText);
     console.log(jsonData)
-      beachName(jsonData[0].data.attributes.name);
+      // beachName(jsonData[0].data.attributes.name);
       swellHeight(jsonData[0].data.attributes.forecast_info.hourly.waveHeight);
       swellPeriod(jsonData[0].data.attributes.forecast_info.hourly.swellPeriod);
       swellDirection(jsonData[0].data.attributes.forecast_info.hourly.swellDirectionInWord);
-      windSpeed(jsonData[0].data.attributes.forecast_info.hourly.windSpeed);
       windDirection(jsonData[0].data.attributes.forecast_info.hourly.windDirectionInWord);
       liveBeachCam(jsonData[0].included[0].attributes.posts[0].picture.thumb);
   }
@@ -115,31 +140,70 @@ getData.setRequestHeader('Accept', 'application/json')
 getData.setRequestHeader('Content-Type', 'application/json')
 getData.send()
 
-function beachName(data){
-  document.getElementById('current-beach').innerHTML = data
-};
+// function beachName(data){
+//   document.getElementById('current-beach').innerHTML = data
+// };
 
 function swellHeight(data){
-  document.getElementById('current-swell-height').innerHTML = 'Wave Height: ' + data + ' ft.';
+  document.getElementById('current-swell-height').innerHTML = '<span class="data-info">Wave Height: </span>' + data + ' ft.';
 }
 
 function swellPeriod(data){
-  document.getElementById('current-swell-period').innerHTML = 'Swell Period: ' + data + ' seconds';
+  document.getElementById('current-swell-period').innerHTML = '<span class="data-info">Swell Period: </span>' + data + ' seconds';
 }
 
 function swellDirection(data){
-  document.getElementById('current-swell-direction').innerHTML = 'Swell Direction: ' + data;
-}
-
-function windSpeed(data){
-  document.getElementById('current-wind-speed').innerHTML = 'Wind Speed: ' + data + ' knots';
+  document.getElementById('current-swell-direction').innerHTML = '<span class="data-info">Swell Direction: </span>' + data;
 }
 
 function windDirection(data){
-  document.getElementById('current-wind-direction').innerHTML = 'Wind Direction: ' + data;
+  document.getElementById('current-wind-direction').innerHTML = '<span class="data-info">Wind Direction: </span>' + data;
 }
 
 function liveBeachCam(data){
   document.getElementById('live-cam').innerHTML = data;
 }
+
+// ==== Getting Recipe API data ====
+
+let hungryButton = document.getElementById('hungry-button').addEventListener('click', function() {
+
+  document.getElementById('button-info').style.display = 'none';
+
+  let getRecipes = new XMLHttpRequest();
+
+  getRecipes.onload = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let jsonData = JSON.parse(this.responseText);
+      console.log(jsonData)
+        recipeTitle(jsonData.recipes[0].title)
+        recipeSummary(jsonData.recipes[0].summary)
+        steps(jsonData.recipes[0].instructions)
+        img(jsonData.recipes[0].image)
+    }
+  }
+
+  getRecipes.open('GET', 'https://api.spoonacular.com/recipes/random?apiKey=b271e78b662e4e7dbd236094b8a35482&includeNutrition=true', true);
+  getRecipes.send();
+
+  function recipeTitle(data) {
+    document.getElementById('recipe-title').innerHTML = data;
+  }
+
+  function recipeSummary(data){
+    document.getElementById('recipe-summary').innerHTML = data;
+  }
+
+  function steps(data) {
+    document.getElementById('steps').innerHTML = data;
+  }
+
+  function img(data) {
+    document.getElementById('img').innerHTML = data;
+  }
+  
+})
+
+
+
 

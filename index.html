@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/66fdaf3caf.js" crossorigin="anonymous"></script>
 
     <title>Surf Cooker</title>
@@ -17,16 +21,16 @@
         <header>
             <section id="social-search-header">
                 <div id="social-header">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
+                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg"><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a href=""><i class="far fa-envelope"></i></a> 
+                </div>  
                 <div>
                     <img id="logo-top" src="./img/logo.png">
                 </div>
-                <div id="search-header">
-                    <input class="search-bar"type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
+                <div>
+                    <a href="#forecast-title"><p id="current-weather-header"></p></a>
+                </div>    
             </section>
             <div id="logo-nav-flex">
                 <div id="logo-container">
@@ -41,6 +45,7 @@
             </div>
         </header>
         <main>
+            
             <!-- Slideshow container -->
             <div class="slideshow-container">
 
@@ -51,74 +56,121 @@
                 <div class="mySlides fade">
                 <img src="./img/wrap-coverup.jpg" class="cover-photo">
                 </div>
-            
-                <div class="mySlides fade">
-                <img src="./img/otw-railgrab-cropped.jpg" class="cover-photo">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="./img/backside-grab-cropped.jpg" class="cover-photo">
-                </div>
 
             </div>
 
             <!-- <video id="videoBG" poster="poster.JPG" autoplay muted loop>
                 <source src="solmar cabo.mp4" type="video/mp4">
             </video> -->
-            
-
-            <section id="jsdata-section">
-                <div id="current-weather-box">
-                    <div id="weather-data">
-                        <p>Dewey Beach, Delaware</p>
-                        <p id="current-temp-f"></p>
-                        <p id="feels-like-f"></p>
-                        <p id="current-condition-text"></p>
-                        <p id="current-wind-mph"></p>
-                        <p id="visibility-miles"></p>
-                        <p id="uv"></p>
-                        <p id="humidity"></p>
+            <div id="forecast-title">
+                <!-- <div id="weather-section-title">
+                    <iframe src="https://giphy.com/embed/8YZxEPB3ljGCi2oJ4R" width="160" height="160" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <div>
+                        <h2>Dewey Beach, Delaware</h2>
+                        <p> Weather and Surf Forecast</p>
                     </div>
-                </div>
-                <div id="wave-forecast-box">
-                    <div id="beach-data">
-                        <p id="current-beach"></p>
-                        <p id="current-swell-height"></p>
-                        <p id="current-swell-period"></p>
-                        <p id="current-swell-direction"></p>
-                        <p id="current-wind-speed"></p>
-                        <p id="current-wind-direction"></p>
-                        <p id="live-cam"></p>
+                    <iframe src="https://giphy.com/embed/8YZxEPB3ljGCi2oJ4R" width="160" height="160" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </div> -->
+                <section id="jsdata-section"> 
+                    <div>
+                        <iframe width="600" height="500" src="https://embed.windy.com/embed2.html?lat=38.69076&amp;lon=-75.07547&amp;zoom=6&amp;level=surface&amp;overlay=rain&amp;" frameborder="0"></iframe>
+                    </div>     
+                    <div id="current-weather-box">
+                        <div id="weather-data">
+                            <div id="forecast-title-dewey">
+                                <h2>Dewey Beach, Delaware</h2>
+                                <p id="forecast-section-title"> Weather and Surf Forecast</p>
+                            </div>
+                            <span>
+                                <p  id="current-temp-f"></p>
+                                <p class="weather-widget"></p>
+                            </span>
+                            <p class="data" id="feels-like-f"></p>
+                            
+                            <p class="data" id="current-condition-text"></p>
+                            <p class="data" id="current-wind-mph"></p>
+                            <p class="data" id="uv"></p>
+                            <p class="data" id="humidity"></p>
+                            <p class="data" id="current-swell-height"></p>
+                            <p class="data" id="current-swell-period"></p>
+                            <p class="data" id="current-swell-direction"></p>
+                            <p class="data" id="current-wind-direction"></p>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            <div id="latestvideo">
-                <h1>Latest episode!</h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Bd1ullGZd-o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </section>
             </div>
 
+            <div id="button-container">
+                <p id="down-arrow">&#8595</p>
+                <h2 id="hungry-button">Feeling Hungry?!</h2>
+                <p id="button-info"> Click above for Surf Cooker's recommended meal of the day!</p>
+                <h2 id="recipe-title"></h2>
+                <p id="recipe-summary"></p>
+                <p id="ingredients"></p>
+                <p id="steps"></p>
+                <img id="img">   
+            </div>
+
+            <div id="latestvideo">
+                <h1 >Latest episode!</h1>
+                <iframe src="https://www.youtube.com/embed/Bd1ullGZd-o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div id="yt-button-container">
+                <h2 id="youtube-button"><a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg" target="_blank">View All Videos</a></h2>
+            </div>
+
+            <div>
+                <h1 id="shop">SHOP</h1>
+            </div>
             <section class="flex-container3">
-                <div class="most-viewed-videos">
-                    <h2>Most viewed episodes!</h2>
-                    <iframe class="videos" width="560" height="315" src="https://www.youtube.com/embed/qKdzVvZbTpQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-                    <iframe class="videos" width="560" height="315" src="https://www.youtube.com/embed/IAp9mGSpk2w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-                    <iframe class="videos" width="560" height="315" src="https://www.youtube.com/embed/DktKcDk_0iw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="blog-post-container">
-                    <a href="#"><img id="sticker-img" src="./img/logo.png"></a>
-                    <div class="blog-info-container">
-                        <h3>Stickers</h3>
-                        <p>Get in contact with me for some Surf Cooker stickers!</p>
+                <div class="card">
+                    <a href="" class="card-img-hover"><img src="img/white-t-back.JPG" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                      <h2 class="card-title">Stickers</h5>
+                      <p class="card-text">Grab a bucket and get paint'n. Perfect black T for looking sharp with your summer tan.</p>
+                      <a href="#" class="venmo-button">Venmo</a>
                     </div>
-                </div>
+                  </div>
+                  <div class="card">
+                    <a href="" class="card-img-hover"><img src="./img/masksJPG.JPG" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                      <h2 class="card-title">Face Masks</h5>
+                      <p class="card-text">Keep safe during covid or stay warm during the summer! Let everyone else know you surf & COOK.</p>
+                      <a href="#" class="venmo-button">Venmo</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a href="" class="card-img-hover"><img src="img/white-t-back.JPG" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                      <h2 class="card-title">White T</h5>
+                      <p class="card-text">Careful what you eat, it will stain the pristine white. Few sizes left grab yours today!</p>
+                      <a href="#" class="venmo-button">Venmo</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a href="" class="card-img-hover"><img src="./img/black-t-back.JPG" id="black-img-change" alt="..."></a>
+                    <div class="card-body">
+                      <h2 class="card-title">Black T</h5>
+                      <p class="card-text">Grab a bucket and get paint'n. Perfect black T for looking sharp with your summer tan.</p>
+                      <a href="#" class="venmo-button">Venmo</a>
+                    </div>
+                  </div>
             </section>
         </main>
 
         <footer>
             <div>
-                <p id="copyright">&copy; Surf Cooker</p>
-                <p id="what"></p>
+                <h2>#SURFCOOKER</h2>
+                <div id="social-header" class="sh-footer">
+                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg"><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a href=""><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="#" id="copyright">&copy; Surf Cooker 2021</a>
+                
             </div>
         </footer>
     </div>
