@@ -37,7 +37,7 @@ weather.send()
 function currentTempF(data) {
   let current = new Date();
   let day_night = current.getHours();
-  if (day_night <= 12) {
+  if (day_night < 7 || day_night >= 19) {
     if (data != 'Sunny') {
       document.getElementById('current-temp-f').innerHTML =  Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon"></i>';
       document.getElementById('current-weather-header').innerHTML = 'Dewey Beach, DE -- ' + Math.round(data) + ' &#8457 <i class="fas fa-cloud-moon"></i>';
@@ -129,7 +129,7 @@ getData.onload = function () {
       swellPeriod(jsonData[0].data.attributes.forecast_info.hourly.swellPeriod);
       swellDirection(jsonData[0].data.attributes.forecast_info.hourly.swellDirectionInWord);
       windDirection(jsonData[0].data.attributes.forecast_info.hourly.windDirectionInWord);
-      liveBeachCam(jsonData[0].included[0].attributes.posts[0].picture.thumb);
+      liveBeachCam(jsonData[0].included[0].attributes.posts[0].video.poster);
   }
 }
 

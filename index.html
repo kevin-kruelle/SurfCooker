@@ -19,27 +19,28 @@
 <body>
     <div>
         <header>
-            <section id="social-search-header">
+            <div id="social-search-header">
                 <div id="social-header">
-                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg"><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
-                    <a href=""><i class="far fa-envelope"></i></a> 
+                    <a href="https://www.instagram.com/surfcooker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="mailto:smccoy2030@gmail.com"><i class="far fa-envelope"></i></a> 
                 </div>  
                 <div>
-                    <img id="logo-top" src="./img/logo.png">
-                </div>
+                    <a href="#"><img id="logo-top" src="./img/Surfcooker Logo (transparent background) copy.png"></a>
+                </div>   
                 <div>
                     <a href="#forecast-title"><p id="current-weather-header"></p></a>
-                </div>    
-            </section>
+                </div> 
+                
+            </div>
             <div id="logo-nav-flex">
                 <div id="logo-container">
-                    <img id="logo" src="./img/logo.png">
+                    <a href="#"><img id="logo" src="./img/Surfcooker Logo (transparent background) copy.jpg"></a>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="./html/media.html">Media</a></li>
+                        <li><a href="#shop">Shop</a></li>
                     </ul>
                 </nav>
             </div>
@@ -50,27 +51,15 @@
             <div class="slideshow-container">
 
                 <div class="mySlides fade">
-                <img src="./img/Screen Shot 2021-03-16 at 2.53.35 PM.png" class="cover-photo">
+                <img src="./img/cover-photo-1.jpg" class="cover-photo">
                 </div>
             
                 <div class="mySlides fade">
-                <img src="./img/wrap-coverup.jpg" class="cover-photo">
+                <img src="./img/cover-photo.jpg" class="cover-photo">
                 </div>
 
             </div>
-
-            <!-- <video id="videoBG" poster="poster.JPG" autoplay muted loop>
-                <source src="solmar cabo.mp4" type="video/mp4">
-            </video> -->
             <div id="forecast-title">
-                <!-- <div id="weather-section-title">
-                    <iframe src="https://giphy.com/embed/8YZxEPB3ljGCi2oJ4R" width="160" height="160" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                    <div>
-                        <h2>Dewey Beach, Delaware</h2>
-                        <p> Weather and Surf Forecast</p>
-                    </div>
-                    <iframe src="https://giphy.com/embed/8YZxEPB3ljGCi2oJ4R" width="160" height="160" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                </div> -->
                 <section id="jsdata-section"> 
                     <div>
                         <iframe width="600" height="500" src="https://embed.windy.com/embed2.html?lat=38.69076&amp;lon=-75.07547&amp;zoom=6&amp;level=surface&amp;overlay=rain&amp;" frameborder="0"></iframe>
@@ -98,7 +87,9 @@
                         </div>
                     </div>
                 </section>
+                
             </div>
+            <p id=live-cam></p>
 
             <div id="button-container">
                 <p id="down-arrow">&#8595</p>
@@ -111,33 +102,35 @@
                 <img id="img">   
             </div>
 
-            <div id="latestvideo">
-                <h1 >Latest episode!</h1>
-                <iframe src="https://www.youtube.com/embed/Bd1ullGZd-o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            <div id="vid-section">
+                <div id="latestvideo">
+                    <h1 >Latest episode!</h1>
+                    <iframe src="https://www.youtube.com/embed/Bd1ullGZd-o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
 
-            <div id="yt-button-container">
-                <h2 id="youtube-button"><a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg" target="_blank">View All Videos</a></h2>
+                <div id="yt-button-container">
+                    <h2 id="youtube-button"><a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg" target="_blank">View All Videos</a></h2>
+                </div>
             </div>
 
             <div>
-                <h1 id="shop">SHOP</h1>
+                <a href="#"><h1 id="shop">SHOP</h1></a>
             </div>
             <section class="flex-container3">
                 <div class="card">
-                    <a href="" class="card-img-hover"><img src="img/white-t-back.JPG" class="card-img-top" alt="..."></a>
+                    <a href="" class="card-img-hover"><img src="img/IMG_0089.jpg" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                       <h2 class="card-title">Stickers</h5>
                       <p class="card-text">Grab a bucket and get paint'n. Perfect black T for looking sharp with your summer tan.</p>
-                      <a href="#" class="venmo-button">Venmo</a>
+                      <a href="mailto:smccoy2030@gmail.com?subject=Sticker Order" class="venmo-button">Order</a>
                     </div>
                   </div>
                   <div class="card">
-                    <a href="" class="card-img-hover"><img src="./img/masksJPG.JPG" class="card-img-top" alt="..."></a>
+                    <a href="" class="card-img-hover"><img src="./img/mask-model.jpg" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                       <h2 class="card-title">Face Masks</h5>
-                      <p class="card-text">Keep safe during covid or stay warm during the summer! Let everyone else know you surf & COOK.</p>
-                      <a href="#" class="venmo-button">Venmo</a>
+                      <p class="card-text">Keep safe during covid or stay warm during the winter! Let everyone else know you surf & COOK.</p>
+                      <a href="mailto:smccoy2030@gmail.com?subject=Mask Order" class="venmo-button">Order</a>
                     </div>
                   </div>
                   <div class="card">
@@ -145,27 +138,45 @@
                     <div class="card-body">
                       <h2 class="card-title">White T</h5>
                       <p class="card-text">Careful what you eat, it will stain the pristine white. Few sizes left grab yours today!</p>
-                      <a href="#" class="venmo-button">Venmo</a>
+                      <a href="mailto:smccoy2030@gmail.com?subject=White T-shirt Order" class="venmo-button">Order</a>
                     </div>
                   </div>
                   <div class="card">
-                    <a href="" class="card-img-hover"><img src="./img/black-t-back.JPG" id="black-img-change" alt="..."></a>
+                    <div id="background-img">
+                        <a href="" class="card-img-hover" id="black-img-change"></a>
+                    </div>
                     <div class="card-body">
                       <h2 class="card-title">Black T</h5>
                       <p class="card-text">Grab a bucket and get paint'n. Perfect black T for looking sharp with your summer tan.</p>
-                      <a href="#" class="venmo-button">Venmo</a>
+                      <a href="mailto:smccoy2030@gmail.com?subject=Black T-shirt Order" class="venmo-button">Order</a>
                     </div>
                   </div>
+                  <div id="order-info">
+                      <p ><span id="asterisk">*</span> All merch orders! Click link to send an email with what you want to purchase. Include venmo username as well as address if item needs to be shipped. I will send a venmo request for full cost along with shipping. When the venmo request is completed on your end the order will be shipped. Thanks!!</p>
+                  </div>
             </section>
+            <div id="lesson-section">
+                <h3><a href="mailto:smccoy2030@gmail.com?subject=Private Lesson Inquire">Lesson Inquires</a></h3>
+                <div>
+                    <h2>Private Lessons</h2>
+                    <p>Schedule a private lesson with me! I am offering private <span>#skimboarding</span> lessons in Southern Delaware during the summer months into September! Private lessons in Hawaii starting in October! Email me for inquires.</p>
+                </div>
+            </div>
+            <div id="image-gallery">
+                <img class="gallery" src="./img/anotha-cabo-wrap.jpg">
+                <img class="gallery" src="./img/mini-air.jpg">
+                <img class="gallery" src="./img/air-drop.jpg">
+                <img class="gallery" src="./img/cabo-wrap.jpg">
+            </div>
         </main>
 
         <footer>
             <div>
                 <h2>#SURFCOOKER</h2>
                 <div id="social-header" class="sh-footer">
-                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg"><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
-                    <a href=""><i class="far fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/surfcooker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCkVNmVPrDboVtblkO5vQRMg" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="mailto:smccoy2030@gmail.com"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
             <div>
